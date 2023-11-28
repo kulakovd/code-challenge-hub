@@ -1,0 +1,42 @@
+[
+  {
+    "model": "TX-2000",
+    "price": 75000
+  },
+  {
+    "model": "RX-300",
+    "price": 55000
+  },
+  {
+    "model": "Mark IV",
+    "price": 65000
+  },
+  {
+    "model": "EcoTrek V12",
+    "price": 85000
+  },
+  {
+    "model": "Futura 9",
+    "price": 48000
+  },
+  {
+    "model": "AgriMax 500",
+    "price": 90000
+  },
+  {
+    "model": "Terra Firma X",
+    "price": 67000
+  },
+  {
+    "model": "GreenField Z3",
+    "price": 72000
+  },
+  {
+    "model": "Harvest King",
+    "price": 63000
+  },
+  {
+    "model": "PloughMaster 3000",
+    "price": 78000
+  }
+]

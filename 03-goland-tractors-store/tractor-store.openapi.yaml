@@ -1,0 +1,118 @@
+openapi: 3.0.0
+info:
+  title: Tractor Shop API
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080/api
+
+paths:
+  /tractors:
+    get:
+      summary: Get a list of all tractors with pagination
+      parameters:
+        - in: query
+          name: limit
+          schema:
+            type: integer
+            default: 10
+          description: Maximum number of tractors to return
+        - in: query
+          name: skip
+          schema:
+            type: integer
+            default: 0
+          description: Number of tractors to skip
+      responses:
+        '200':
+          description: A paginated list of tractors
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  tractors:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Tractor'
+                  totalCount:
+                    type: integer
+                  limit:
+                    type: integer
+                  skip:
+                    type: integer
+
+    post:
+      summary: Add a new tractor to the catalog
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tractor'
+      responses:
+        '201':
+          description: New tractor created
+
+  /tractors/{id}:
+    get:
+      summary: Get details of a specific tractor
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Tractor details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Tractor'
+
+    put:
+      summary: Update a tractor's details
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Tractor'
+      responses:
+        '200':
+          description: Tractor updated
+
+    delete:
+      summary: Remove a tractor from the catalog
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '204':
+          description: Tractor deleted
+
+components:
+  schemas:
+    Tractor:
+      type: object
+      required:
+        - model
+        - price
+      properties:
+        id:
+          type: integer
+          format: int64
+        model:
+          type: string
+        price:
+          type: number
+          format: float
