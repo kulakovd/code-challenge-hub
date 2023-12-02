@@ -27,4 +27,4 @@ Feel free to perform a task in any way you like. There are no strict rules but h
 
 1. [WebAssembly Prime Number Checker](01-wasm-rust-fundamentals/README.md)
 2. [JavaScript Implementation of a 3D Cube Renderer using WebGL](02-pure-webgl-cube/README.md)
-3. [Tractor Store REST API on Golang](03-goland-tractors-store/README.md)
+3. [Tractor Store REST API on Golang](03-golang-tractors-store/README.md)
